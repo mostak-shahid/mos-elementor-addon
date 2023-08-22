@@ -51,7 +51,7 @@ class Post_Grid extends Widget_Base {
 		// Content Tab Start
 
 		$this->start_controls_section(
-			'section_title',
+			'mosea_section_post__query_section_title',
 			[
 				'label' => esc_html__( 'Query', 'elementor-addon' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
@@ -155,7 +155,27 @@ class Post_Grid extends Widget_Base {
 		$this->end_controls_section();
 
 		// Content Tab End
-
+		$this->start_controls_section(
+            'mosea_section_post_layout_section_title',
+            [
+                'label' => __('Layout Settings', 'elementor-addon'),
+            ]
+        );
+		$this->add_control(
+            'eael_dynamic_template_Layout',
+            [
+                'label'   => esc_html__('Template Layout', 'essential-addons-for-elementor-lite'),
+                'type'    => Controls_Manager::SELECT,
+                'options' => [
+					'post' => 'Post',
+					'page' => 'Page',
+					'e-landing-page' => 'Landing Pages',
+					'product' => 'Product'
+				],
+                'default' => 'post',
+            ]
+        );
+		$this->end_controls_section();
 
 		// Style Tab Start
 
@@ -163,7 +183,7 @@ class Post_Grid extends Widget_Base {
 			'section_title_style',
 			[
 				'label' => esc_html__( 'Title', 'elementor-addon' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
@@ -171,7 +191,7 @@ class Post_Grid extends Widget_Base {
 			'title_color',
 			[
 				'label' => esc_html__( 'Text Color', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
 				],

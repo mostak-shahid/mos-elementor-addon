@@ -21,3 +21,7 @@ function register_hello_world_widget( $widgets_manager ) {
 
 }
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
+
+
+$taxonomies     = get_taxonomies( [], 'objects' );
+//var_dump($taxonomies);
