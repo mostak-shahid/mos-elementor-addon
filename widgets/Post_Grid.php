@@ -94,7 +94,7 @@ class Post_Grid extends Widget_Base {
 		    'post__not_in',
 		    [
 			    'label'       => __( 'Exclude', 'essential-addons-for-elementor-lite' ),
-			    'type'        => 'eael-select2',
+			    'type' => Controls_Manager::SELECT2,
 			    'label_block' => true,
 			    'multiple'    => true,
 			    'source_name' => 'post_type',
